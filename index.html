@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,80 @@
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
+  <!-- 
+    * change with the weather
+      - pg-content background image
+      - icon
+   -->
+  <div class="pg-content">
+    <div class="overlay">
+      <div class="content">
+        <!-- 
+          { "coord":{ "lon":159, "lat":35 }, "weather":[ { "id":500, "main":"Rain", "description":"light rain", "icon":"https://cdn.glitch.com/6e8889e5-7a72-48f0-a061-863548450de5%2F10n.png?1499366021399" } ], "base":"stations", "main":{ "temp":22.59, "pressure":1027.45, "humidity":100, "temp_min":22.59, "temp_max":22.59, "sea_level":1027.47, "grnd_level":1027.45 }, "wind":{ "speed":8.12, "deg":246.503 }, "rain":{ "3h":0.45 }, "clouds":{ "all":92 }, "dt":1499521932, "sys":{ "message":0.0034, "sunrise":1499451436, "sunset":1499503246 }, "id":0, "name":"", "cod":200 }
+         -->
+        <div class="content-title">
+          <header class="pg-header">
+            <h1>Free Code Camp</h1>
+            <h1>Weather App</h1>
+          </header>
+          <h1 class="weather-info location-weather">
+            <span>Canberra</span>
+            <span><span class="icon"></span>Rain</span>
+          </h1>
+          <h2 class="weather-info desc">
+            Light Rain
+          </h2>
+        </div>
+        <div class="content-body">
+          <div class="weather-info temperature">
+            <div class="weather-info-item">
+              <span class="weather-info-item-key">Lowest Temp:</span>
+              <span class="weather-info-item-value">1 C</span>
+            </div>
+            <div class="weather-info-item">
+              <span class="weather-info-item-key">Highest Temp:</span>
+              <span class="weather-info-item-value">15 C</span>
+            </div>
+          </div>
+          <div class="weather-info pressure-humidity">
+            <div class="weather-info-item">
+              <span class="weather-info-item-key">Atomspheric Pressure:</span>
+              <span class="weather-info-item-value">1027.45 hPa</span>
+            </div>
+            <div class="weather-info-item">
+              <span class="weather-info-item-key">Humidity:</span>
+              <span class="weather-info-item-value">66%</span>
+            </div>
+          </div>
+          <div class="weather-info wind">
+            <div class="weather-info-item">
+              <span class="weather-info-item-key">Wind Speed:
+              </span>
+              <span class="weather-info-item-value">11 km/h</span>
+            </div>
+            <div class="weather-info-item">
+              <span class="weather-info-item-key">Direction:</span>
+              <span class="weather-info-item-value">East</span>
+            </div>
+          </div>
+          <div class="weather-info sun-info">
+            <div class="weather-info-item">
+              <span class="weather-info-item-key">Sunrise:
+              </span>
+              <span class="weather-info-item-value">04:00:00</span>
+            </div>
+            <div class="weather-info-item">
+              <span class="weather-info-item-key">Sunset:</span>
+              <span class="weather-info-item-value">17:00:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="./js/main.js"></script>
 </body>
+
 </html>
