@@ -15,6 +15,7 @@ h1 {
 
 /************************* .pg-content START *************************/
 .pg-content {
+  overflow: auto;
   background-color: #000;
   position: relative;
   background-repeat: no-repeat;
@@ -24,6 +25,7 @@ h1 {
   height: 100%;
 }
 .pg-content .overlay {
+  overflow: auto;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -39,6 +41,9 @@ h1 {
 header.pg-header,
 h1.location-weather {
   margin: 1.5rem 0;
+}
+h1.location-weather .icon {
+  vertical-align: middle;
 }
 /*********** .pg-content .pg-header END ***********/
 
@@ -59,8 +64,9 @@ h1.location-weather {
 /*********** .pg-content .content END ***********/
 
 /*********** .pg-content .content .content-body .weather-info START ***********/
-.pg-content .content .content-body .weather-info {
+.pg-content .content .weather-info {
   margin: 1rem 0;
+  text-transform: capitalize
 }
 
 .weather-info-item{
@@ -77,6 +83,19 @@ h1.location-weather {
 }
 .weather-info-item-value {
   text-align: left;
+  padding-right: 1rem;
+}
+.weather-info-item-value .temp-value {
+  display: inline-block;
+}
+.btn-celtofah {
+  font-size: 1.5rem;
+  padding: 0 .5rem;
+  background-color: transparent;
+  color: #fff;
+  border: 2px outset #ccc;
+  outline: 0;
+  cursor: pointer
 }
 /*********** .pg-content .content .content-body .weather-info END ***********/
 

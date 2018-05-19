@@ -13,7 +13,7 @@ function handleDOM(dataObj) {
   let titleHTML = `
   <h1 class="weather-info location-weather">
     <span class="city">${dataObj.name}</span>
-    <span class="weather"><span class="icon"><img src='${dataObj.weather[0].icon}'></span>${dataObj.weather[0].main}</span>
+    <span class="weather"><img class=icon src='${dataObj.weather[0].icon}'>${dataObj.weather[0].main}</span>
   </h1>
   <h2 class="weather-info">
     <span class="desc">${dataObj.weather[0].description}</span>
@@ -21,31 +21,35 @@ function handleDOM(dataObj) {
   `
   let bodyHTML = `
   <div class="weather-info temperature">
-    <div class="weather-info-item">
-      <span class="weather-info-item-key">Current Temp:</span>
-      <span class="weather-info-item-value">
-      <span class="temp-value">${dataObj.main.temp}</span>
-      <button class="temp-unit">&#8451;</button>
-      </span>
-    </div>
-    <div class="weather-info-item">
-      <span class="weather-info-item-key">Lowest Temp:</span>
-      <span class="weather-info-item-value">
-        <span class="temp-value">${dataObj.main.temp_min}</span>
-      <button class="temp-unit">&#8451;</button>
-      </span>
-    </div>
-    <div class="weather-info-item">
-      <span class="weather-info-item-key">Highest Temp:</span>
-      <span class="weather-info-item-value">
-        <span class="temp-value">${dataObj.main.temp_max}</span>
-        <button class="temp-unit">&#8451;</button>
-      </span>
+    <div>
+      <div class="weather-info-item">
+        <span class="weather-info-item-key">Current Temp:</span>
+        <span class="weather-info-item-value">
+          <span class="temp-value">${dataObj.main.temp}</span>
+          <span class="temp-unit">&#8451;</span>
+        </span>
+      </div>
+      <div class="weather-info-item">
+        <span class="weather-info-item-key">Lowest Temp:</span>
+        <span class="weather-info-item-value">
+          <span class="temp-value">${dataObj.main.temp_min}</span>
+          <span class="temp-unit">&#8451;</span>
+        </span>
+      </div>
+      <div class="weather-info-item">
+        <span class="weather-info-item-key">Highest Temp:</span>
+        <span class="weather-info-item-value">
+          <span class="temp-value">${dataObj.main.temp_max}</span>
+          <span class="temp-unit">&#8451;</span>
+        </span>
+      </div>
+      <div><button class="btn-celtofah toFah">To Fahrenheit</button></div>
     </div>
   </div>
+
   <div class="weather-info pressure-humidity">
     <div class="weather-info-item">
-      <span class="weather-info-item-key">Atomspheric Pressure:</span>
+      <span class="weather-info-item-key">Atom Pressure:</span>
       <span class="weather-info-item-value">${dataObj.main.pressure} hPa</span>
     </div>
     <div class="weather-info-item">
@@ -116,19 +120,23 @@ function handleWindDirection(windObj, deg) {
 }
 
 function handleCelToFah() {
-  let tempUnitDOM = document.querySelectorAll('.temp-unit')
-  tempUnitDOM.forEach(function (el) {
-    el.onclick = function () {
-      let tempValue = +this.previousElementSibling.innerHTML
-      if (this.innerHTML.trim() == '℃') {
-        tempValue = floatTwoDigits(tempValue * 1.8 + 32)
-        this.previousElementSibling.innerHTML = tempValue
-        this.innerHTML = '℉'
-      } else {
-        tempValue = floatTwoDigits((tempValue - 32) / 1.8);
-        this.previousElementSibling.innerHTML = tempValue
-        this.innerHTML = '℃'
-      }
+  let temperatureDOM = document.querySelector('.temperature')
+  let tempUnitDOM = temperatureDOM.querySelectorAll('.temp-unit')
+  let btnCelToFah = document.querySelector('.btn-celtofah')
+  btnCelToFah.addEventListener('click', function () {
+    if (this.classList.contains('toFah')) {
+      tempUnitDOM.forEach(function (el) {
+        el.previousElementSibling.innerHTML =floatTwoDigits(+el.previousElementSibling.innerHTML * 1.8 + 32)
+        el.innerHTML = '℉'
+      })
+      this.innerHTML = 'To Celsius'
+    } else {
+      tempUnitDOM.forEach(function (el) {
+        el.previousElementSibling.innerHTML =floatTwoDigits((+el.previousElementSibling.innerHTML - 32) / 1.8)
+        el.innerHTML = '℃'
+      })
+      this.innerHTML = "To Fahrenheit"
     }
+    this.classList.toggle('toFah')
   })
 }
