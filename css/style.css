@@ -13,19 +13,11 @@ h1 {
 }
 /* Common CSS END */
 
-/* Pics:
-    Sunny: https://images.pexels.com/photos/681368/pexels-photo-681368.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
-    Rainy: https://images.pexels.com/photos/110874/pexels-photo-110874.jpeg?cs=srgb&dl=rain-raindrops-rainy-110874.jpg&fm=jpg
-    Cloudy: https://images.pexels.com/photos/395196/pexels-photo-395196.jpeg?cs=srgb&dl=alone-animal-bird-395196.jpg&fm=jpg
-    Snowy: https://images.pexels.com/photos/890029/pexels-photo-890029.jpeg?cs=srgb&dl=architecture-buildings-church-890029.jpg&fm=jpg
-
- */
-
-
 /************************* .pg-content START *************************/
 .pg-content {
+  background-color: #000;
   position: relative;
-  background: url(https://images.pexels.com/photos/681368/pexels-photo-681368.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -37,7 +29,7 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 /*********** .pg-content .pg-header START ***********/
 .pg-header h1 {

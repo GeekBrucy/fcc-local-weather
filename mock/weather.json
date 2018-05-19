@@ -1,0 +1,40 @@
+{
+  "coord": {
+    "lon": 121.47,
+    "lat": 31.23
+  },
+  "weather": [{
+    "id": 800,
+    "main": "Cloud",
+    "description": "clear sky",
+    "icon": "https://cdn.glitch.com/6e8889e5-7a72-48f0-a061-863548450de5%2F01n.png?1499366020783"
+  }],
+  "base": "stations",
+  "main": {
+    "temp": 7,
+    "pressure": 1023,
+    "humidity": 70,
+    "temp_min": 7,
+    "temp_max": 7
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 3.6,
+    "deg": 30
+  },
+  "clouds": {
+    "all": 0
+  },
+  "dt": 1526554800,
+  "sys": {
+    "type": 1,
+    "id": 8226,
+    "message": 0.0045,
+    "country": "AU",
+    "sunrise": 1526503984,
+    "sunset": 1526540788
+  },
+  "id": 2172517,
+  "name": "Canberra",
+  "cod": 200
+}
